@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership board</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ </head>
+<body>
+
+    <nav class="navbar navbar-light bg-info justify-content-lg-start">
+        <a class="navbar-brand" href="index.html" onclick="reset()" >
+            <img src="Hangman.png" class="m-2" alt="Hangman" width="300" height="40">
+          </a>
+          <ul class="navbar-nav m-2">
+            <li class="nav-item">
+                <a class=" nav-link" href="index.html">Home</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav m-2">
+            <li class=" nav-item">
+                <a class=" nav-link active" href="leaderboard.html">Leaderboard</a>
+            </li>
+        </ul>
+        
+      </nav>
+
+
+    <h1> Leadership Board </h1>
+
+    <div class="container">
+      <table class="table table-hover table-striped table-bordered">
+        <tr class="bg-info">
+            <th>Name</th>
+            <th>Result</th>
+            <th>Score</th>
+        </tr>
+        <tbody id="mytable">
+
+        </tbody>
+
+      </table>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="offset-4 col-sm-2">
+                <button class="button btn-info" onclick="filldata()">Refresh</button>
+            </div>
+            <div class="col-sm-2">
+                <button class="button  btn-info" onclick="window.location.href = '/index.html' ">Back</button>
+        
+            </div>
+        </div>
+
+         </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row"></div>
+            <div class="col col-5 ">
+              </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script>
+        filldata();
+        
+        function cleartable()
+        {
+            var table = document.getElementById("mytable");
+            table.innerHTML = "";
+        }
+
+        async function filldata()
+        {
+            cleartable();
+            buildtable(await getfullDB());
+
+        }
+
+        function buildtable(data)
+        {
+            var table = document.getElementById("mytable");
+            
+            for(var i=0;i<data.length;i++)
+            {
+                var row =  `<tr>
+                                <td>${data[i].Name}</td>
+                                <td>${data[i].Status}</td>
+                                <td>${data[i].Score}</td>
+                            </tr>`
+                table.innerHTML +=row;
+            }
+        }
+
+        async function getfullDB()
+        {
+            const response = await fetch('/leadershipboard');
+           const data = await response.json();
+            console.log(data);
+            return data;
+        }
+    </script>
+</body>
+</html>

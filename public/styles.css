@@ -1,0 +1,55 @@
+.container{
+    text-align: center;
+    align-self: center;
+    
+}
+.footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+
+h1
+{
+    text-align: center;
+    margin: 6px;
+}
+
+table{
+    text-align: left;
+}
+
+
+.hyphens li{
+    text-align: center;
+    margin: 0 10px 10px 0;
+    margin: auto;
+    display: inline;
+    padding: 0 10px;
+    font-size: 1.6em;
+    list-style: none;
+    
+}
+
+button {
+ 
+    border-radius: 5px;
+    color: #fff;
+    border: solid 1px #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 8px 10px;
+    width: 180px;
+    margin: 10px;
+    outline: none;
+  }
+   
+  input{
+      text-align:center;
+  }
+
+  .trialbox{
+      align-content: center;
+  }

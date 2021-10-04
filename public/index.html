@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title> Hang man </title>
+       <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="FileSaver.js"></script>
+    </head>
+    
+<body>
+    
+    <nav class="navbar navbar-light bg-info justify-content-lg-start">
+        <a class="navbar-brand" href="index.html" onclick="reset()" >
+            <img src="Hangman.png" class="m-2" alt="Hangman" width="300" height="40">
+          </a>
+          <ul class="navbar-nav m-2">
+            <li class="nav-item">
+                <a class=" nav-link active" href="index.html">Home</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav m-2">
+            <li class=" nav-item">
+                <a class=" nav-link" href="leaderboard.html">Leaderboard</a>
+            </li>
+        </ul>
+        
+      </nav>
+      <!--
+      <div class="container">
+      <div class="col col-md-12">
+        <div class="jumbotron">
+          <h2 class="display-4">The Hangman game</h2>
+          <p class="lead">Welcome to play the hangman guess game</p>
+        </div>
+      </div> -->
+    </div>
+      <div class="container m-5" id='login'>
+          <div class="col col-md-12">
+            <div class="card">
+                <h2 class=" card-header">Hollywood Hangman</h2>
+                <h4 class="m-2 card-title">Play the game</h4>
+                <div class="card-body"> 
+                    <p class="card-text">Play the Game of hollywood and guess the movie with 9 chances</p>
+  
+                        <div class="row" >
+                            <form class="mt-5">
+                              <div class="mb-2">
+                                  <label for="name" class="col col-lg-3 form-label">Name</label>
+                                  <input class="col col-3" type="text" placeholder="John Doe" id="playername">
+                                  
+                              </div>
+                              <button type="button" onclick="handleSubmit()" class="col col-2 btn-info ">Start</button>
+                          </form>
+                      </div>
+                    
+                </div>
+            </div>
+          </div>
+          
+          
+      
+
+
+    </div>
+    <div class="container" id="game" style="display:none;" onload="result()">
+        <div class="col col-md-12 m-3">
+            <p>
+              Welcome to the game, <span id="myplayer"></span>
+            </p>
+            <p>
+                Type a letter in the box below and start guessing
+            </p>
+           
+            <p>
+                <div id=try >
+                
+                </div>
+                <div id="tryerror"></div>
+            </p>
+            <p class="trialbox">
+                <span id="mylives"></span>
+            </p>
+            <br>
+            <hr>
+           <p>
+            <div id='hold' class="hyphens"></div>
+            </p>
+          </div>
+          <div id="option">
+              
+          </div>
+    </div>
+   
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row"></div>
+            <div class="col col-5 ">
+              <button class="button btn-info" onclick="window.location.href = '/leaderboard.html' ">Scores</button>
+            </div>
+        </div>
+      </div>
+    </footer>
+        
+        
+    
+
+
+
+
+</body>
+
+</html>
