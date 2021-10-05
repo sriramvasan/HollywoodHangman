@@ -9,6 +9,12 @@
     bottom: 0;
 }
 
+ol
+{
+    text-align: left;
+    list-style:lower-roman;
+}
+
 
 h1
 {

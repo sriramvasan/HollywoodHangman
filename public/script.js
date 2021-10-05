@@ -271,6 +271,7 @@ function reset()
     wordHolder = document.getElementById("hold");
     wordHolder.innerHTML="";
     guessbox.value = "";
+    document.getElementById('playername').value =" ";
     
     gameresult = "Incomplete";
     gamestats = [];

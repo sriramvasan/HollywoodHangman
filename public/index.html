@@ -13,7 +13,7 @@
     
 <body>
     
-    <nav class="navbar navbar-light bg-info justify-content-lg-start">
+    <nav class="navbar navbar-light bg-info justify-content-md-start">
         <a class="navbar-brand" href="index.html" onclick="reset()" >
             <img src="Hangman.png" class="m-2" alt="Hangman" width="300" height="40">
           </a>
@@ -29,14 +29,7 @@
         </ul>
         
       </nav>
-      <!--
-      <div class="container">
-      <div class="col col-md-12">
-        <div class="jumbotron">
-          <h2 class="display-4">The Hangman game</h2>
-          <p class="lead">Welcome to play the hangman guess game</p>
-        </div>
-      </div> -->
+     
     </div>
       <div class="container m-5" id='login'>
           <div class="col col-md-12">
@@ -49,18 +42,52 @@
                         <div class="row" >
                             <form class="mt-5">
                               <div class="mb-2">
-                                  <label for="name" class="col col-lg-3 form-label">Name</label>
-                                  <input class="col col-3" type="text" placeholder="John Doe" id="playername">
+                                  <label for="name" class="col col-md-3 form-label">Name</label>
+                                  <input class="col col-md-3" type="text" placeholder="John Doe" autofocus id="playername">
                                   
                               </div>
-                              <button type="button" onclick="handleSubmit()" class="col col-2 btn-info ">Start</button>
+                              <button type="button" onclick="handleSubmit()" class="col col-md-3 btn-info">Start</button>
+                              <button type="button" class="col col-md-3 btn-info" data-bs-toggle="modal"
+                                data-bs-target ="#staticBackdrop">Rules</button>
                           </form>
                       </div>
                     
                 </div>
             </div>
           </div>
-          
+
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog ">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h3>Rules of the Game: </h3>
+                  <hr>
+                  <ol>
+                    <li>All the blanks are names of famous movies.</li>
+                    <li>You have 9 lives in total.</li>
+                    <li>You should enter one letter at a time inside the given textbox.</li>
+                    <li>Each wrong guess costs you one life.</li>
+                    <li>When the lives run out the game ends and redirects you to the start page.</li>
+                    <li>You can also guess the movie name by typing all the characters at once (of the given word length).
+                        <ul>
+                            <li>If all the characters entered are correct then you get maximum score and win the game.</li>
+                            <li>If all the characters are entred at once and not correct then all the 9 lives are depleted and game is ended.</li>
+                        </ul>
+                    </li>
+                    
+                </ol>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-info" data-bs-dismiss="modal"onclick="handleSubmit()" >I understand</button>
+                </div>
+              </div>
+            </div>
+          </div>
           
       
 
@@ -68,9 +95,9 @@
     </div>
     <div class="container" id="game" style="display:none;" onload="result()">
         <div class="col col-md-12 m-3">
-            <p>
+            <h3>
               Welcome to the game, <span id="myplayer"></span>
-            </p>
+            </h3>
             <p>
                 Type a letter in the box below and start guessing
             </p>
